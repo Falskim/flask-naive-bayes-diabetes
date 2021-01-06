@@ -1,0 +1,273 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <br><br>
+    <h3 class="header center orange-text">DATA MINING FINAL PROJECT</h3>
+    <div class="row center">
+      <h6 class="header col s12 light">Early Stage Diabetes Risk Prediction Using Naive Bayes Classifier</i>
+      </h6>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+
+    <!-- KELOMPOK -->
+    <div class="col s12 m7">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content center">
+
+            <h4 class="header center blue-text">Group 2</h4>
+            <h5 style="margin-bottom: 2rem;">Class A</h5>
+            <div class="container center">
+              <div class="row">
+
+                <div class="col s12 m4">
+                  <div class="icon-block">
+                    <b class="center">Fawwaz Syiham Muyassar</b>
+
+                    <p class="light">1177050044</p>
+                  </div>
+                </div>
+
+                <div class="col s12 m4">
+                  <div class="icon-block">
+                    <b class="center">Muhammad Iqbal Hadad</b>
+
+                    <p class="light">1177050070</p>
+                  </div>
+                </div>
+
+                <div class="col s12 m4">
+                  <div class="icon-block">
+                    <b class="center">Salma Nurzaqiah</b>
+
+                    <p class="light">1177050104</p>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col s12 m6">
+                  <div class="icon-block">
+                    <b class="center">Adi Fitrianto</b>
+
+                    <p class="light">11770500005</p>
+                  </div>
+                </div>
+
+                <div class="col s12 m6">
+                  <div class="icon-block">
+                    <b class="center">Wawan Kurniawan</b>
+
+                    <p class="light">1177050118</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END KELOMPOK -->
+  </div>
+  <div class="section">
+
+    <div class="col s12 m7">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <h4 class="header center blue-text">Dataset Information</h4>
+            <!--   Icon Section   -->
+            <div class="collection">
+              <a href="#!" class="collection-item"><span class="badge">520</span>Total Data</a>
+              <a href="#!" class="collection-item"><span class="badge">17</span>Total Attributes</a>
+            </div>
+            <div class="row center">
+              <a href="{{url_for('dataset')}}" id="download-button"
+                class="btn-large waves-effect waves-light orange">View
+                Dataset</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+
+    <div class="col s12 m7">
+
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <h4 class="header center blue-text">Diabetes Prediction</h4>
+
+            <form class="col s12" id="predictForm">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input placeholder="Age" value="30" min="10" max="100" id="age" name="age" type="number"
+                    class="active validate" required />
+                  <label for="age">Age</label>
+                </div>
+
+                <div class="input-field col s6">
+                  <select name="gender" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                  </select>
+                  <label>Gender</label>
+                </div>
+              </div>
+
+              <h5><i class="material-icons prefix">mode_edit</i> Syndrome</h5>
+              <br>
+              <div class="row">
+                <div class="col m6 s12">
+                  <p>
+                    <label>
+                      <input name="polyuria" type="hidden" />
+                      <input name="polyuria" type="checkbox" class="filled-in" />
+                      <span>Polyuria</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="polydipsia" type="hidden" ` />
+                      <input name="polydipsia" type="checkbox" class="filled-in" />
+                      <span>Polydipsia</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="weight" type="hidden" />
+                      <input name="weight" type="checkbox" class="filled-in" />
+                      <span>Sudden Weight Loss</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="weakness" type="hidden" />
+                      <input name="weakness" type="checkbox" class="filled-in" />
+                      <span>Weakness</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="polyphagia" type="hidden" />
+                      <input name="polyphagia" type="checkbox" class="filled-in" />
+                      <span>Polyphagia</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="genital" type="hidden" />
+                      <input name="genital" type="checkbox" class="filled-in" />
+                      <span>Genital Thrush</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="visual" type="hidden" />
+                      <input name="visual" type="checkbox" class="filled-in" />
+                      <span>Visual Blurring</span>
+                    </label>
+                  </p>
+                </div>
+
+                <div class="col m6 s12">
+                  <p>
+                    <label>
+                      <input name="itching" type="hidden" />
+                      <input name="itching" type="checkbox" class="filled-in" />
+                      <span>Itching</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="Irritability" type="hidden" />
+                      <input name="Irritability" type="checkbox" class="filled-in" />
+                      <span>Irritability</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="delayed" type="hidden" />
+                      <input name="delayed" type="checkbox" class="filled-in" />
+                      <span>Delayed Healing</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="partial" type="hidden" />
+                      <input name="partial" type="checkbox" class="filled-in" />
+                      <span>Partial Paresis</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="muscle" type="hidden" />
+                      <input name="muscle" type="checkbox" class="filled-in" />
+                      <span>Muscle Stiffness</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="alopecia" type="hidden" />
+                      <input name="alopecia" type="checkbox" class="filled-in" />
+                      <span>Alopecia</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="obesity" type="hidden" />
+                      <input name="obesity" type="checkbox" class="filled-in" />
+                      <span>Obesity</span>
+                    </label>
+                  </p>
+                </div>
+              </div>
+            </form>
+            <div class="row center">
+              <button id="predictButton" class="btn-large waves-effect waves-light orange">Predict Data</button>
+            </div>
+
+            <div class="card horizontal" id="predictionResultCard" style="display: none;">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <h4 class="header center blue-text">Prediction Result</h4>
+                  <!--   Icon Section   -->
+                  <div class="collection left-align">
+                    <a href="#!" class="collection-item"><span class="badge"
+                        id="predictionClass">{class}</span>Diabetes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br><br>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+</script>
+<script src="{{url_for('static', filename='predict.js')}}"></script>
+{% endblock %}
